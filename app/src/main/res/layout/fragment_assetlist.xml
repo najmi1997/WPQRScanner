@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:HorizontalScrollViewandroid="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblAssInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="55dp"
+                android:text="Asset Information :"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <TextView
+                android:id="@+id/txtAssetInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="No Data" />
+
+            <HorizontalScrollView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tl"
+                android:padding="5dp">
+
+                <TableRow
+                    android:id="@+id/tr1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/Code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp"
+                        android:text="\nCode\n"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp"
+                        android:text="\nName\n"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/AssetType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp"
+                        android:text="\nAsset Type\n"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/Location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp"
+                        android:text="\nLocation\n"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/LastCorrectiveDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp"
+                        android:text="\nLast Corrective Date\n"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/LastPPMDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp"
+                        android:text="\nLast  PPM Date\n"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="14sp" />
+                </TableRow>
+
+            </TableLayout>
+
+                </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/buttonHide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="false"
+                android:layout_centerVertical="false"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:text="Clear All Log" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
