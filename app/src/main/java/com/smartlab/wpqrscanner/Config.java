@@ -273,6 +273,7 @@ public class Config extends Activity {
         boolean bFlag = false;
 
         //String token = FirebaseInstanceId.getInstance().getToken();
+        String token = "13k2,n34";
         Spinner spinHttp = (Spinner) findViewById(R.id.spinHttp);
         sHttp = spinHttp.getItemAtPosition(spinHttp.getSelectedItemPosition()).toString();
 
@@ -293,7 +294,7 @@ public class Config extends Activity {
         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
         nameValuePairs.add((NameValuePair) new BasicNameValuePair("username", usr));
         nameValuePairs.add((NameValuePair) new BasicNameValuePair("password", pass));
-        //nameValuePairs.add((NameValuePair) new BasicNameValuePair("token", token));
+        nameValuePairs.add((NameValuePair) new BasicNameValuePair("token", token));
         nameValuePairs.add((NameValuePair) new BasicNameValuePair("phoneid", imei));
 
         bFlag = post(url, nameValuePairs, usr);
@@ -305,7 +306,7 @@ public class Config extends Activity {
         jsonobj.accumulate("username", usr);
         jsonobj.accumulate("password", pass);
         jsonobj.accumulate("modelno", deviceName);
-        //jsonobj.accumulate("token", token);
+        jsonobj.accumulate("token", token);
 
 
         if (bFlag == true)
