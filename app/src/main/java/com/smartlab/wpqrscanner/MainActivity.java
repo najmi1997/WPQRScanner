@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
         db = new DatabaseHelper(getApplicationContext());
         dba = new dbActivities();
 
-        checkConfigDB() ;
+        //checkConfigDB() ;
         if (db.openDB()){
            // Toast.makeText(this,"Db created", Toast.LENGTH_SHORT).show();
         }else{

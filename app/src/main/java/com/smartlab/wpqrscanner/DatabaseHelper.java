@@ -16,7 +16,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
      Context context;
     static final String TAG = "DbHelper";
      static final String DATABASE_NAME = "wpqrscanner.db";
-     static final Integer DATABASE_VERSION = 1;
+     static final Integer DATABASE_VERSION = 2;
 
      static final String TABLE_NAME = "qrlibrary";
      static final String COLUMN_ID = "_id";
@@ -49,7 +49,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        db.execSQL("drop table if exists wpconfigmd");// drops the old database
+        db.execSQL("DROP TABLE IF EXISTS wpconfigmd");// drops the old database
         Log.i(TAG, "onUpdated table 'wpconfig'");
 
         onCreate(db);

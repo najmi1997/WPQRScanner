@@ -109,8 +109,13 @@ public class Config extends Activity {
 
 
         dba = new dbActivities();
-        dbConfigHelper = new DatabaseHelper(this);
+        dbConfigHelper = new DatabaseHelper(getApplicationContext());
+        if (dbConfigHelper.openDB()){
+            // Toast.makeText(this,"Db created", Toast.LENGTH_SHORT).show();
+        }else{
+            //   Toast.makeText(this,"Db doesnt exists", Toast.LENGTH_SHORT).show();
 
+        }
         sHttp = "";
 
         spinHttp = (Spinner) findViewById(R.id.spinHttp);
@@ -265,6 +270,7 @@ public class Config extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         this.finish();
+
     }
 
     public boolean AuthUser(int primary, String Uid, String Pwd, String Svr, boolean active) throws JSONException {
