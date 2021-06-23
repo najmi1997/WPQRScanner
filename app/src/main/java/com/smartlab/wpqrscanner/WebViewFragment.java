@@ -32,7 +32,7 @@ public class WebViewFragment extends Fragment {
         webView = view.findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("google.com");
+        webView.loadUrl("http://ge.smartlab.com.my/helpdesk/m/req.wp?p=1");
         progressBar.setProgress(0);
 
         webView.setWebChromeClient(new WebChromeClient(){

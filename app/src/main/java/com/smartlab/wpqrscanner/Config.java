@@ -107,7 +107,7 @@ public class Config extends Activity {
         };
         thrd.start();
 
-
+        checkPermission();
         dba = new dbActivities();
         dbConfigHelper = new DatabaseHelper(getApplicationContext());
         if (dbConfigHelper.openDB()){
@@ -289,6 +289,9 @@ public class Config extends Activity {
         String pass = Pwd;
         String url = Svr + getResources().getString(R.string.user_auth) ;
 
+        usr = usr.replaceAll(" ","");
+        pass = pass.replaceAll(" ","");
+        url = url.replaceAll(" ","");
 
         String deviceName = android.os.Build.MODEL;
         String deviceMan = android.os.Build.MANUFACTURER;
@@ -541,5 +544,18 @@ public class Config extends Activity {
     public void showToast(String strMsg)
     {
         Toast.makeText(this, strMsg, Toast.LENGTH_SHORT).show();
+    }
+
+    public void checkPermission() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                &&ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED){
+            //donothing
+        }else{
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.CAMERA}, 44);
+        }
     }
 }

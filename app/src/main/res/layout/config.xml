@@ -77,7 +77,7 @@
                     <EditText
                         android:id="@+id/edtxtServer"
                         style="@style/modifiedEditText"
-                        android:hint="@string/login_email_hint"
+                        android:hint="@string/login_server_hint"
                         android:inputType="text"
                         android:maxLines="1" />
 

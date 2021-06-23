@@ -38,7 +38,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + TABLE_NAME + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_CODE + " TEXT," + COLUMN_NAME + " TEXT," + COLUMN_TYPE + " TEXT," +
                 COLUMN_LOC + " TEXT," + COLUMN_LCORDATE + " TEXT," + COLUMN_LPPMDATE + " TEXT)";
-        Toast.makeText(context,query,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context,query,Toast.LENGTH_SHORT).show();
         db.execSQL(query);
         String sql2 = "create table wpconfigmd (_ID int primary key, username text, password text, server text, active int,version text)"; //
         db.execSQL(sql2);
