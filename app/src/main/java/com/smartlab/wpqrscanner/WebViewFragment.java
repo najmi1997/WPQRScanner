@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -30,9 +31,12 @@ public class WebViewFragment extends Fragment {
         progressBar.setMax(100);
 
         webView = view.findViewById(R.id.webview);
+        webView.addJavascriptInterface(new WebAppInterface(getActivity()),"Android");
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://ge.smartlab.com.my/helpdesk/m/req.wp?p=1");
+        webView.loadUrl("https://signalr.smartlab.com/");
         progressBar.setProgress(0);
 
         webView.setWebChromeClient(new WebChromeClient(){
@@ -46,6 +50,8 @@ public class WebViewFragment extends Fragment {
                 progressBar.setProgress(newProgress);
             }
         });
+
+
         // Inflate the layout for this fragment
         return view;
 
