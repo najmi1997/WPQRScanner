@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
+
         checkConfigDB();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -128,11 +129,14 @@ public class MainActivity extends AppCompatActivity
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapViewMain);
         // method to get the location
         locationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        getLastLocation();
+        //getLastLocation();
 
 
 
     }
+
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -152,6 +156,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+
+    //--------------------------------------------------------------------------------------------------------------------------------------
+    //navigation selected item
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -203,6 +210,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    //--------------------------------------------------------------------------------------------------------------------------------------
+    //pass qr result
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
@@ -238,6 +248,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //--------------------------------------------------------------------------------------------------------------------------------------
+    //check db connection
+
     public void checkConfigDB() {
         try{
             retbool = getCurrentDomain();
@@ -253,7 +266,10 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    @SuppressLint("MissingPermission")
+    //--------------------------------------------------------------------------------------------------------------------------------------
+    //check location
+
+   /* @SuppressLint("MissingPermission")
     private void getLastLocation() {
         txtCoor =(TextView) findViewById(R.id.edtxtCoor);
         txtLoc = (TextView) findViewById(R.id.edtxtLoc);
@@ -276,7 +292,7 @@ public class MainActivity extends AppCompatActivity
                                 Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
                                 List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
                                 String address = addresses.get(0).getAddressLine(0);
-/*
+*//*
                                 mapFragment.getMapAsync(new OnMapReadyCallback() {
                                     @Override
                                     public void onMapReady(GoogleMap googleMap) {
@@ -285,7 +301,7 @@ public class MainActivity extends AppCompatActivity
                                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
                                         googleMap.addMarker(options);
                                     }
-                                });*/
+                                });*//*
                                 txtLoc.setText(address);
                                 txtCoor.setText(location.getLatitude() + ","+location.getLongitude());
                             }catch (Exception e){
@@ -380,7 +396,10 @@ public class MainActivity extends AppCompatActivity
         if (checkPermissions()) {
             getLastLocation();
         }
-    }
+    }*/
+
+    //--------------------------------------------------------------------------------------------------------------------------------------
+    //check login condition
 
     private boolean getCurrentDomain() {
 
